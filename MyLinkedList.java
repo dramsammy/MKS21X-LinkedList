@@ -3,7 +3,13 @@ public class MyLinkedList{
     private int data;
     private Node next,prev;
     // Empty Constructor
-    public Node(){
+    public Node(int Number){
+    
+    }
+    public Node(Node ReferenceFrom, int Number, Node ReferenceTo){
+      next = ReferenceTo;
+      prev = ReferenceFrom;
+
     }
   }
   private int size;
