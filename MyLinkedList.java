@@ -6,10 +6,25 @@ public class MyLinkedList{
     public Node(int Number){
       data = Number;
     }
+    public Node(Node ReferenceFrom){
+      return Node()
+    }
     public Node(Node ReferenceFrom, int Number, Node ReferenceTo){
       next = ReferenceTo;
       prev = ReferenceFrom;
       data = Number;
+    }
+    public Node next(){
+      return next;
+    }
+    public Node prev(){
+      return prev;
+    }
+    public void setNext(Node other){
+      next = other;
+    }
+    public void setPrev(Node other){
+      prev = other;
     }
   }
   private int size;
