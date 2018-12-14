@@ -4,12 +4,12 @@ public class MyLinkedList{
     private Node next,prev;
     // Empty Constructor
     public Node(int Number){
-    
+      data = Number;
     }
     public Node(Node ReferenceFrom, int Number, Node ReferenceTo){
       next = ReferenceTo;
       prev = ReferenceFrom;
-
+      data = Number;
     }
   }
   private int size;
