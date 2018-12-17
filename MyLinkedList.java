@@ -106,4 +106,25 @@ public class MyLinkedList{
   }
     return -1;
 }
+  public void add(int i, Integer v){
+    if (i >= size || i < 0){
+      throw new IndexOutOfBoundsException("Index is not in range");
+    }
+    Node add = new Node(null, v, null);
+    if (i == 0){
+      add.setNext(start);
+      start.setPrev(add);
+      start = add;
+      size++;
+    }
+    else{
+      Node work = getNth(i);
+      Node before = work.prev();
+      before.setNext(add);
+      work.setPrev(add);
+      add.setPrev(before);
+      add.setNext(work);
+      size++;
+    }
+  }
 }
