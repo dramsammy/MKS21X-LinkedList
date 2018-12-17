@@ -115,14 +115,14 @@ public class MyLinkedList{
     }
     Node add = new Node(null, v, null);
     if (i == 0){
-      add.setNext(start);
-      start.setPrev(add);
+      add.setPrev(null);
+      start.setNext(getNth(0));
       start = add;
       size++;
     }
     else{
       Node work = getNth(i);
-      Node before = work.prev();
+      Node before = getNth(i-1);
       before.setNext(add);
       work.setPrev(add);
       add.setPrev(before);
