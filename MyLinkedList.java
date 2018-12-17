@@ -116,13 +116,13 @@ public class MyLinkedList{
     Node add = new Node(null, v, null);
     if (i == 0){
       add.setPrev(null);
-      start.setNext(getNth(0));
+      add.setNext(getNth(0));
       start = add;
       size++;
     }
     else{
       Node work = getNth(i);
-      Node before = getNth(i-1);
+      Node before = getNth(i -1);
       before.setNext(add);
       work.setPrev(add);
       add.setPrev(before);
@@ -155,7 +155,7 @@ public class MyLinkedList{
     String returnvalue = "[";
     for (int i = 0; i < size - 1 ; i++){
       returnvalue += getNth(i).getData() + ", ";
-  }
+      }
     returnvalue+=  getNth(size -1).getData() + "]";
     return returnvalue;
 }
