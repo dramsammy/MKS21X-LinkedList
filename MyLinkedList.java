@@ -87,7 +87,14 @@ public class MyLinkedList{
     Integer temp = work.getData();
     work.setData(v);
     return temp;
-
+  }
+  public boolean contains(Integer v){
+    for (int i = 0; i < size; i++){
+      if (getNth(i).getData() == v){
+        return true;
+      }
+    }
+    return false;
   }
 
 }
