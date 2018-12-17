@@ -40,7 +40,7 @@ public class MyLinkedList{
     size = 0;
   }
   // Returns the size of the MyLinkedList
-  public int Size(){
+  public int size(){
     return size;
   }
   public boolean add(int value){
@@ -110,6 +110,9 @@ public class MyLinkedList{
     if (i >= size || i < 0){
       throw new IndexOutOfBoundsException("Index is not in range");
     }
+    if (i == size){
+      add(v);
+    }
     Node add = new Node(null, v, null);
     if (i == 0){
       add.setNext(start);
@@ -145,4 +148,15 @@ public class MyLinkedList{
     remove(indexOf(integer));
     return true;
   }
+  public String toString(){
+    if (size ==0){
+      return "[]";
+    }
+    String returnvalue = "[";
+    for (int i = 0; i < size - 1 ; i++){
+      returnvalue += getNth(i).getData() + ", ";
+  }
+    returnvalue+=  getNth(size -1).getData() + "]";
+    return returnvalue;
+}
 }
