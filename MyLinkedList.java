@@ -79,5 +79,15 @@ public class MyLinkedList{
     Node work = getNth(index);
     return work.getData();
   }
+  public Integer set(int index, Integer v){
+    if (index >= size || index < 0){
+      throw new IndexOutOfBoundsException("Index is not in range");
+    }
+    Node work = getNth(index);
+    Integer temp = work.getData();
+    work.setData(v);
+    return temp;
+
+  }
 
 }
