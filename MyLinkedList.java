@@ -2,13 +2,6 @@ public class MyLinkedList{
   private class Node{
     private int data;
     private Node next,prev;
-    // Empty Constructor
-    public Node(int Number){
-      data = Number;
-    }
-    public Node(Node ReferenceFrom){
-      return Node()
-    }
     public Node(Node ReferenceFrom, int Number, Node ReferenceTo){
       next = ReferenceTo;
       prev = ReferenceFrom;
@@ -25,6 +18,11 @@ public class MyLinkedList{
     }
     public void setPrev(Node other){
       prev = other;
+    }
+    public Integer setData(Integer other){
+      Integer temp = data;
+      data = other;
+      return temp;
     }
   }
   private int size;
