@@ -62,5 +62,12 @@ public class MyLinkedList{
     end = null;
     size = 0;
   }
+  public Node getNth(int x){
+    Node workspace = start;
+    for (int i = 0; i < x; i++){
+      workspace = workspace.getNext();
+    }
+    return workspace;
+  }
 
 }
