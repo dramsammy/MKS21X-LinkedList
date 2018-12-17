@@ -127,4 +127,15 @@ public class MyLinkedList{
       size++;
     }
   }
+  public Integer remove(int i){
+    if (i >= size || i < 0){
+      throw new IndexOutOfBoundsException("Index is not in range");
+  }
+    Integer temp = get(i);
+    Node work = getNth(i);
+    work.prev().setNext(work.next());
+    work.next().setPrev(work.prev());
+    size--;
+    return temp;
+}
 }
