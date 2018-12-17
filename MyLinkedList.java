@@ -54,10 +54,13 @@ public class MyLinkedList{
       end = latest;
       size++;
       return true;
-
-
     }
     return true;
+  }
+  public void clear(){
+    start = null;
+    end = null;
+    size = 0;
   }
 
 }
