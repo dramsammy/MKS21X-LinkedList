@@ -24,6 +24,9 @@ public class MyLinkedList{
       data = other;
       return temp;
     }
+    public Integer getData(){
+      return data;
+    }
     public String toString(){
       return "" + data;
     }
@@ -62,12 +65,19 @@ public class MyLinkedList{
     end = null;
     size = 0;
   }
-  public Node getNth(int x){
+  private Node getNth(int x){
     Node workspace = start;
     for (int i = 0; i < x; i++){
       workspace = workspace.next();
     }
     return workspace;
+  }
+  public Integer get(int index){
+    if (index >= size || index < 0){
+      throw new IndexOutOfBoundsException("Index is not in range");
+    }
+    Node work = getNth(index);
+    return work.getData();
   }
 
 }
