@@ -134,11 +134,29 @@ public class MyLinkedList{
     if (i >= size || i < 0){
       throw new IndexOutOfBoundsException("Index is not in range");
   }
+    Node prev;
+    Node next;
     Integer temp = get(i);
     Node work = getNth(i);
-    work.prev().setNext(work.next());
-    work.next().setPrev(work.prev());
-    size--;
+    if (i == 0){
+      next = work.next();
+      next.setPrev(null);
+      start = next;
+      size --;
+    }
+    else if (i == size - 1){
+      size--;
+    }
+    else{
+      prev = getNth(i -1);
+      next = getNth(i + 1);
+      prev.setNext(next);
+      next.setPrev(prev);
+      size--;
+    }
+    // work.prev().setNext(work.next());
+    // work.next().setPrev(work.prev());
+    // size--;
     return temp;
 }
   public boolean remove(Integer integer){
