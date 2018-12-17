@@ -170,7 +170,7 @@ public class MyLinkedList{
     this.size = this.size + other.size;
     this.end.setNext(other.start);
     this.end = other.end;
-    this.clear();
+    other.clear();
   }
   public String toString(){
     if (size ==0){
