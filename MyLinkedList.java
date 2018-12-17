@@ -96,5 +96,14 @@ public class MyLinkedList{
     }
     return false;
   }
-
+  public int indexOf(Integer v){
+    if (contains(v)){
+      for (int i = 0; i < size; i++){
+        if (getNth(i).getData() == v){
+          return i;
+        }
+    }
+  }
+    return -1;
+}
 }
