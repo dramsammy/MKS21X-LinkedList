@@ -138,4 +138,11 @@ public class MyLinkedList{
     size--;
     return temp;
 }
+  public boolean remove(Integer integer){
+    if (contains(integer) == false){
+      return false;
+    }
+    remove(indexOf(integer));
+    return true;
+  }
 }
