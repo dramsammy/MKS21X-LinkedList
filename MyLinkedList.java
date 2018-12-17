@@ -24,6 +24,9 @@ public class MyLinkedList{
       data = other;
       return temp;
     }
+    public String toString(){
+      return "" + data;
+    }
   }
   private int size;
   private Node start,end;
