@@ -167,10 +167,18 @@ public class MyLinkedList{
     return true;
   }
   public void extend(MyLinkedList other){
-    this.size = this.size + other.size;
-    this.end.setNext(other.start);
-    this.end = other.end;
-    other.clear();
+    if (this.size == 0){
+      this.size = other.size;
+      this.start = other.start;
+      this.end = other.end;
+      other.clear();
+    }
+    else{
+      this.size = this.size + other.size;
+      this.end.setNext(other.start);
+      this.end = other.end;
+      other.clear();
+    }
   }
   public String toString(){
     if (size ==0){
